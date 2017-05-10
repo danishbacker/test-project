@@ -8,12 +8,32 @@
 module.exports = {
 
   attributes: {
+    
+    name: {
+      type: 'string',
+      required: true
+    },
 
-    login : { type: 'string' },
+    title: {
+      type: 'string'
+    },
 
-    logout : { type: 'string' },
+    email: {
+      type: 'string',
+      email: true,
+      required: true,
+      unique: true
+    },
 
-    signup : { type: 'string' }
+    encryptedPassword: {
+      type: 'string'
+    }
+
+    // login : { type: 'string' },
+
+    // logout : { type: 'string' },
+
+    // signup : { type: 'string' }
   }
 };
 
