@@ -161,8 +161,8 @@ module.exports.blueprints = {
 
   // To disable blueprint routing
   // to be explicit and make it clear that there's no magic going on.
-  actions: false,
-  rest: false,
-  shortcuts: false
+  // actions: false,
+  // rest: false,
+  // shortcuts: false
 
 };
