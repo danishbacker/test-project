@@ -7,8 +7,36 @@
 
 module.exports = {
 	
-  'signup': function(req, res) {
+  /**
+   * `UserController.new()`
+   * This loads the signup page new.ejs
+   */
+  new: function(req, res) {
+    res.locals.flash = _.clone(req.session.flash);
     res.view();
+    // req.session.flash = {};
+  },
+
+  /**
+   * `UserController.create()`
+   */
+
+  // Create user with params sent from the Form new.ejs
+  create: function(req, res, next) {
+    User.create (req.params.all(), function userCreated (err, user) {
+      // If there is an error
+      if (err){
+        // console.log(err);
+        req.session.flash = {
+          err: err
+        }
+
+        return res.redirect('user/new');
+      }
+      // Else user created succesfully redirect to users list
+      res.json(user);
+      req.session.flash = {};
+    });
   }
 
   /**

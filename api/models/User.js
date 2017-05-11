@@ -7,9 +7,11 @@
 
 module.exports = {
 
+  schema: true,
+
   attributes: {
     
-    name: {
+    fullname: {
       type: 'string',
       required: true
     },
